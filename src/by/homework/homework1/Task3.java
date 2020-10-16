@@ -6,10 +6,13 @@ public class Task3{
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter first number: ");
+        chekIntegerNumber(scanner);
         int firstNum = scanner.nextInt();
         System.out.println("Enter second number: ");
+        chekIntegerNumber(scanner);
         int secondNum = scanner.nextInt();
         System.out.println("Enter third number: ");
+        chekIntegerNumber(scanner);
         int thirdNum = scanner.nextInt();
         if (firstNum > secondNum) {
             if (firstNum > thirdNum) {
@@ -24,16 +27,6 @@ public class Task3{
                 System.out.println("max= " + thirdNum);
             }
         }
-        // ver2
-        /*if (firstNum > secondNum && firstNum > thirdNum) {
-            System.out.println("max= " + firstNum);
-        } else if (secondNum > firstNum && secondNum > thirdNum) {
-            System.out.println("max= " + secondNum);
-        } else if (thirdNum > firstNum && thirdNum > secondNum) {
-            System.out.println("max= " + thirdNum);
-        } else if (firstNum == secondNum && firstNum == thirdNum) {
-            System.out.println("Numbers are equal");
-        }*/
         if (firstNum < secondNum) {
             if (firstNum < thirdNum) {
                 System.out.println("min= " + firstNum);
@@ -48,9 +41,31 @@ public class Task3{
             }
         }
         double arithMean = (double) (firstNum + secondNum + thirdNum) / 3;
-        ; //arithmetical mean - среднее арифметическое
-        System.out.println(arithMean);
-       /* int val = (int) (arithMean * 100) % 100;
-        System.out.println("ost= " + val);*/
+        System.out.println("(" + firstNum + " + " + secondNum + " + " + thirdNum + ") / 3 = " + arithMean);
+        //ver2
+        /*int maxNum = firstNum;
+        if (maxNum < secondNum) {
+            maxNum = secondNum;
+        }
+        if (maxNum < thirdNum) {
+            maxNum = thirdNum;
+        }
+        System.out.println("max= " + maxNum);
+        int minNum = firstNum;
+        if (minNum > secondNum) {
+            minNum = secondNum;
+        }
+        if (minNum > thirdNum) {
+            minNum = thirdNum;
+        }
+        System.out.println("min= " + minNum);*/
+    }
+
+    public static void chekIntegerNumber(Scanner scanner){
+        while (!scanner.hasNextInt()) {
+            System.out.println("It is not an integer number!");
+            System.out.println("Please enter an integer number: ");
+            scanner.next();
+        }
     }
 }
