@@ -25,7 +25,7 @@ public class Task2{
     }
 
     public static void checkNumber(Scanner scanner){
-        while (!scanner.hasNextInt() ) {
+        while (!scanner.hasNextInt()) {
             System.out.println("It is not an integer number!");
             System.out.println("Please enter an integer number: ");
             scanner.next();
