@@ -8,10 +8,9 @@ public class Task4{
 
         int minBound = 0;
         int maxBound = 100;
+
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter number from [" + minBound + " ; " + maxBound + "]");
-        //checkNumber(scanner);
-        int userNumber = scanner.nextInt();
+        int userNumber = checkNumber(scanner, minBound, maxBound);
         int counts = 1;
         Random random = new Random();
         while (true) {
@@ -24,11 +23,17 @@ public class Task4{
         }
     }
 
-    public static void checkNumber(Scanner scanner){
-        while (!scanner.hasNextInt()) {
-            System.out.println("It is not an integer number!");
-            System.out.println("Please enter an integer number: ");
-            scanner.next();
-        }
+    public static int checkNumber(Scanner scanner, int minBound, int maxBound){
+        int number;
+        do {
+            System.out.println("Enter number from [" + minBound + ";" + maxBound + "]:");
+            while (!scanner.hasNextInt()) {
+                System.out.println("It is not an integer  number! Try again:");
+                scanner.next();
+            }
+            number = scanner.nextInt();
+        } while (number < minBound || number > maxBound);
+
+        return number;
     }
 }
