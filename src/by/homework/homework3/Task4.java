@@ -19,7 +19,7 @@ public class Task4 {
             }
             int count = 0;
             for (int j = 0; j < split.length; j++) {
-                if (split[j].equals(currentWorld)) {
+                if (split[j].equalsIgnoreCase(currentWorld)) {
                     count++;
                     split[j] = marker + split[j];
                 }
